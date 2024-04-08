@@ -34,5 +34,5 @@
 
 # C and other binaries
 **/*.exe
-
+**/*.vsidx
 desktop.ini
