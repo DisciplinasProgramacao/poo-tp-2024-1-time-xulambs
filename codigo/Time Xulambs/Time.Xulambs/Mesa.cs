@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,20 +22,51 @@ namespace teste
             proximoNumero++;
 
         }
-        
+
         // Altera o status da mesa para ocupado ou desocupado
-        public void AlterarOcupacao()
+        public bool OcuparMesa()
         {
-            if(ocupada == true) 
+            if (ocupada == false)
             {
-                ocupada= false;
+                ocupada = true;
             }
             else
             {
-                ocupada= true;
+                Console.WriteLine("A mesa ja esta desocupada")
+            }
+            return ocupada;
+        }
+
+        public bool DesocuparMesa()
+        {
+            if (ocupada == true)
+            {
+                ocupada = false;
+            }
+            else
+            {
+                Console.WriteLine("A mesa ja esta ocupada")
+            }
+            return ocupada;
+        }
+
+        // Verifica a quantidade de pessoa que a mesa suporta
+        public bool AceitaPessoas(int numPessoas)
+        {
+            if(numPessoas == capacidade)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-        
+
+        public bool VerificarOcupacao()
+        {
+            return ocupada;
+        }
         // Linha de código para testar a mesa
 
         public void RelatarMesa()
