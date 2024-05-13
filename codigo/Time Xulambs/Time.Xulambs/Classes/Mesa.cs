@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace teste
+namespace Time.Xulambs.Classes
 {
-    internal class Mesa
+    public class Mesa
     {
         private static int proximoNumero = 1;
         private int numeroMesa;
         private int capacidade;
         private bool ocupada;
+
+        public int NumeroMesa { get { return proximoNumero; } }
 
         //Construtor, utiliza de uma static para armazenar o Número que a próxima mesa irá utilizar, a mesa atual pega o valor atual da static
         public Mesa(int capacidade)
@@ -27,13 +23,10 @@ namespace teste
         public bool OcuparMesa()
         {
             if (ocupada == false)
-            {
                 ocupada = true;
-            }
             else
-            {
-                Console.WriteLine("A mesa ja esta desocupada")
-            }
+                Console.WriteLine("A mesa ja esta desocupada");
+
             return ocupada;
         }
 
@@ -45,7 +38,7 @@ namespace teste
             }
             else
             {
-                Console.WriteLine("A mesa ja esta ocupada")
+                Console.WriteLine("A mesa ja esta ocupada");
             }
             return ocupada;
         }
@@ -53,7 +46,7 @@ namespace teste
         // Verifica a quantidade de pessoa que a mesa suporta
         public bool AceitaPessoas(int numPessoas)
         {
-            if(numPessoas == capacidade)
+            if (numPessoas == capacidade)
             {
                 return true;
             }
